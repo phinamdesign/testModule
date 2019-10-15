@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tuổi</title>
+</head>
+<body>
+<h1>Kiểm tra tuổi</h1>
+<label for="inYear">Nhập vào năm sinh</label><br>
+<input type="text" value="" id="inYear">
+<button type="button" onclick="getAge()">click</button>
+<br><br>
+<div id="result"></div>
+
+<script>
+
+
+    function getAge(yearr) {
+        var datee = new Date();
+        var yearr= Number(document.getElementById("inYear").value);
+        let currentYear = datee.getFullYear();
+        do {
+            alert("Năm sinh không hợp lệ");
+            yearr= Number(prompt("Nhập lại năm sinh : "));
+            document.getElementById("inYear").value = yearr;
+        }while (yearr>currentYear);
+        let age = currentYear - yearr;
+        document.getElementById("result").innerHTML=("Tuổi của bạn là : "+age);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<form action="">
+    <label for="inNumber">Enter a number</label>
+    <input type="text" value="" id="inNumber">
+    <button type="button" onclick="showPrime()">Show</button>
+    <br><br>
+    <div id="result"></div>
+</form>
+<script>
+    function checkPrime(n) {
+        if (n<2){
+            return false;
+        }else {
+            for (let i=2 ; i<n ; i++){
+                if (n%i == 0)
+                    return false
+            }
+            return true;
+        }
+    }
+
+    function showPrime(n) {
+        let num = Number(document.getElementById("inNumber").value);
+        for (let i = 0; i<= num ; i++){
+            if (checkPrime(i)){
+                document.write(i+"<br>");
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
